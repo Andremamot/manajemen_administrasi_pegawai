@@ -104,19 +104,19 @@
                                 <div class="row">
                                     <label for="nama">Nama Lengkap</label>
                                     <input value="{{old('nama')}}" name="nama" type="text" class="form-control bg-light" id="nama" placeholder="Nama Lengkap" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
-                                    <label for="nama">NIP</label>
+                                    <label for="nip">NIP</label>
                                     <input value="{{old('NIP')}}" name="nama" type="text" class="form-control bg-light" id="nama" placeholder="NIP" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
-                                    <label for="kode">Jabatan</label>
+                                    <label for="jabatan">Jabatan</label>
                                     <select name="jk" class="form-control my-1 mr-sm-2 bg-light" id="jk" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
                                         <option value="">-- Jabatan --</option>
-                                        <option value="Laki-Laki">-</option>
-                                        <option value="Perempuan">-</option>
+                                        <option value="1">-</option>
+                                        <option value="2">-</option>
                                     </select>
-                                    <label for="tempatlahir">Departemen</label>
+                                    <label for="departemen">Departemen</label>
                                     <input value="{{old('tempatlahir')}}" name="tempatlahir" type="text" class="form-control bg-light" id="tempatlahir" placeholder="Departemen" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
-                                    <label for="tgllahir">Gaji</label>
+                                    <label for="gaji">Gaji</label>
                                     <input value="{{old('tgllahir')}}" name="tgllahir" type="number" class="form-control bg-light" id="tgllahir" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
-                                    <label for="alamat">Tanggal Bergabung</label>
+                                    <label for="join_date">Tanggal Bergabung</label>
                                     <textarea name="alamat" class="form-control bg-light" id="alamat" rows="2" type="date" placeholder="Tanggal bergabung" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">{{old('alamat')}}</textarea>
                                 </div>
                                 <hr>
