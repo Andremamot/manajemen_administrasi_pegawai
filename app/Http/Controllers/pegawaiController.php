@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Guru;
+use App\Pegawai;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
-class GuruController extends Controller
+class PegawaiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +33,7 @@ class GuruController extends Controller
         ]);
 
         //Menambah data ke table guru
-        $guru = new Guru();
+        $guru = new Pegawai();
         $guru->nama   = $request->input('nama');
         $guru->jenis_kelamin   = $request->input('jk');
         $guru->tempat_lahir   = $request->input('tempatlahir');
@@ -51,13 +51,13 @@ class GuruController extends Controller
         //     'password' => Hash::make($request->input('no_hp')),
         //     'role' => $role,
         // ]);
-        return redirect('/guru/index')->with("sukses", "Data Guru Berhasil Ditambahkan");
+        return redirect('/Pegawai/index')->with("sukses", "Data Guru Berhasil Ditambahkan");
     }
     //function untuk masuk ke view edit
     public function edit($id_guru)
     {
         $guru = \App\pegawai::find($id_guru);
-        return view('guru/edit', ['guru' => $guru]);
+        return view('pegawai/edit', ['guru' => $guru]);
     }
     public function update(Request $request, $id_guru)
     {
@@ -68,7 +68,7 @@ class GuruController extends Controller
             'no_hp' => 'min:12|max:13',
             'email' => 'email',
         ]);
-        $guru = \App\Guru::find($id_guru);
+        $guru = \App\Pegawai::find($id_guru);
         $guru->update($request->all());
         $guru->save();
         return redirect('guru/index')->with('sukses', 'Data Guru Berhasil Diedit');

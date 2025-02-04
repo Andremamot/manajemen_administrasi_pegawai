@@ -102,10 +102,10 @@
                             <form action="/guru/tambah" method="POST">
                                 {{csrf_field()}}
                                 <div class="row">
-                                    <label for="nama">NIP</label>
-                                    <input value="{{old('nama')}}" name="nama" type="text" class="form-control bg-light" id="nama" placeholder="NIP" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
                                     <label for="nama">Nama Lengkap</label>
                                     <input value="{{old('nama')}}" name="nama" type="text" class="form-control bg-light" id="nama" placeholder="Nama Lengkap" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
+                                    <label for="nama">NIP</label>
+                                    <input value="{{old('NIP')}}" name="nama" type="text" class="form-control bg-light" id="nama" placeholder="NIP" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
                                     <label for="kode">Jabatan</label>
                                     <select name="jk" class="form-control my-1 mr-sm-2 bg-light" id="jk" required oninvalid="this.setCustomValidity('Isian ini tidak boleh kosong !')" oninput="setCustomValidity('')">
                                         <option value="">-- Jabatan --</option>

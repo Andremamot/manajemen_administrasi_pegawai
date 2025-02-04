@@ -19,11 +19,11 @@ Route::get('/logout', 'AuthController@logout');
 //Route untuk user Admin
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
-    Route::get('/pegawai/index', 'GuruController@index');
-    Route::post('/pegawai/tambah', 'GuruController@tambah');
-    Route::get('/pegawai/{id}/edit', 'GuruController@edit');
-    Route::post('/pegawai/{id}/update', 'GuruController@update');
-    Route::get('/pegawai/{id}/delete', 'GuruController@delete');
+    Route::get('/pegawai/index', 'PegawaiController@index');
+    Route::post('/pegawai/tambah', 'PegawaiController@tambah');
+    Route::get('/pegawai/{id}/edit', 'PegawaiController@edit');
+    Route::post('/pegawai/{id}/update', 'PegawaiController@update');
+    Route::get('/pegawai/{id}/delete', 'PegawaiController@delete');
     Route::resource('/pengguna', 'PenggunaController');
 });
 
