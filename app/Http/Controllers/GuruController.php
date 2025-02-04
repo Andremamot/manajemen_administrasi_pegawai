@@ -17,7 +17,7 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $data_guru = \App\Guru::orderByRaw('nama ASC')->get();
+        $data_guru = \App\pegawai::orderByRaw('nama ASC')->get();
         return view('pegawai.index', ['data_guru' => $data_guru]);
     }
 
@@ -56,7 +56,7 @@ class GuruController extends Controller
     //function untuk masuk ke view edit
     public function edit($id_guru)
     {
-        $guru = \App\Guru::find($id_guru);
+        $guru = \App\pegawai::find($id_guru);
         return view('guru/edit', ['guru' => $guru]);
     }
     public function update(Request $request, $id_guru)
@@ -78,7 +78,7 @@ class GuruController extends Controller
     public function delete($id)
     {
         try {
-            $guru = \App\Guru::find($id);
+            $guru = \App\pegawai::find($id);
             $guru->delete();
             return redirect('guru/index')->with('sukses', 'Data Guru Berhasil Dihapus');
         } catch (\Illuminate\Database\QueryException $ex) {
